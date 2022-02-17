@@ -66,7 +66,7 @@ class MixedFusedLayerNorm(torch.nn.Module):
 
         global fused_mix_prec_layer_norm_cuda
         fused_mix_prec_layer_norm_cuda = importlib.import_module(
-          "fused_mix_prec_layer_norm_cuda")
+          "fused_mix_prec_layer_norm_hip")
 
         if isinstance(normalized_shape, numbers.Integral):
             normalized_shape = (normalized_shape,)
