@@ -29,7 +29,7 @@ class ScaledUpperTriangMaskedSoftmax(torch.autograd.Function):
 
     @staticmethod
     def forward(ctx, inputs, scale):
-        import scaled_upper_triang_masked_softmax_cuda
+        import scaled_upper_triang_masked_softmax_hip as scaled_upper_triang_masked_softmax_cuda
 
         scale_t = torch.tensor([scale])
         softmax_results = scaled_upper_triang_masked_softmax_cuda.forward(
@@ -41,7 +41,7 @@ class ScaledUpperTriangMaskedSoftmax(torch.autograd.Function):
 
     @staticmethod
     def backward(ctx, output_grads):
-        import scaled_upper_triang_masked_softmax_cuda
+        import scaled_upper_triang_masked_softmax_hip as scaled_upper_triang_masked_softmax_cuda
 
         softmax_results, scale_t = ctx.saved_tensors
         input_grads = scaled_upper_triang_masked_softmax_cuda.backward(
