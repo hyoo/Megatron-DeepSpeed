@@ -109,7 +109,7 @@ def main(cfg: DictConfig) -> None:
     utils.set_torch_seed(cfg.common.seed)
 
     # Print nvidia smi stats
-    logger.info(metrics.get_nvidia_smi_gpu_memory_stats_str())
+    # logger.info(metrics.get_nvidia_smi_gpu_memory_stats_str())
 
     # Print args
     logger.info(cfg)
@@ -168,7 +168,7 @@ def main(cfg: DictConfig) -> None:
             ),
         )
     )
-    logger.info(metrics.get_nvidia_smi_gpu_memory_stats_str())
+    # logger.info(metrics.get_nvidia_smi_gpu_memory_stats_str())
 
     # Load valid dataset (we load training data below, based on the latest checkpoint)
     # We load the valid dataset AFTER building the model
@@ -192,7 +192,7 @@ def main(cfg: DictConfig) -> None:
             cfg.dataset.batch_size,
         )
     )
-    logger.info(metrics.get_nvidia_smi_gpu_memory_stats_str())
+    # logger.info(metrics.get_nvidia_smi_gpu_memory_stats_str())
 
     # Load the latest checkpoint if one is available and restore the
     # corresponding train iterator
