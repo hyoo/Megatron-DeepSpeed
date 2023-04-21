@@ -105,7 +105,7 @@ if "--no_megatron" not in sys.argv:
                     "-U__CUDA_NO_HALF_CONVERSIONS__",
                 ],
             },
-            include_dirs=['/mnt/resource_nvme/metaseq_build/Thrust/'],
+            include_dirs=['/opt/metaseq_stack/Thrust/'],
         )
     )
     extension_modules.append(
@@ -123,7 +123,7 @@ if "--no_megatron" not in sys.argv:
                     "-U__CUDA_NO_HALF_CONVERSIONS__",
                 ],
             },
-            include_dirs=['/mnt/resource_nvme/metaseq_build/Thrust/'],
+            include_dirs=['/opt/metaseq_stack/Thrust/'],
         )
     )
 else:
@@ -175,7 +175,7 @@ if "--no_apex" not in sys.argv:
                     "-O3",
                 ],
             },
-            include_dirs=['/mnt/resource_nvme/metaseq_build/Thrust/'],
+            include_dirs=['/opt/metaseq_stack/Thrust/'],
         )
     )
     extension_modules.append(
@@ -189,7 +189,7 @@ if "--no_apex" not in sys.argv:
                 "cxx": ["-O3"],
                 "nvcc": ["-O3" ],
             },
-            include_dirs=['/mnt/resource_nvme/metaseq_build/Thrust/'],
+            include_dirs=['/opt/metaseq_stack/Thrust/'],
         )
     )
     #extension_modules.append(
@@ -203,7 +203,7 @@ if "--no_apex" not in sys.argv:
     #            "cxx": ["-O3"],
     #            "nvcc": ["-O3"],
     #        },
-    #        include_dirs=['/mnt/resource_nvme/metaseq_build/Thrust/'],
+    #        include_dirs=['/opt/metaseq_stack/Thrust/'],
     #    )
     #)
     # --global-option="--deprecated_fused_adam"
@@ -219,7 +219,7 @@ if "--no_apex" not in sys.argv:
                 "cxx": ["-O3"],
                 "nvcc": ["-O3"],
             },
-            include_dirs=['/mnt/resource_nvme/metaseq_build/Thrust/'],
+            include_dirs=['/opt/metaseq_stack/Thrust/'],
         )
     )
 else:
