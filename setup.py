@@ -105,7 +105,6 @@ if "--no_megatron" not in sys.argv:
                     "-U__CUDA_NO_HALF_CONVERSIONS__",
                 ],
             },
-            include_dirs=['/opt/metaseq_stack/Thrust/'],
         )
     )
     extension_modules.append(
@@ -123,7 +122,6 @@ if "--no_megatron" not in sys.argv:
                     "-U__CUDA_NO_HALF_CONVERSIONS__",
                 ],
             },
-            include_dirs=['/opt/metaseq_stack/Thrust/'],
         )
     )
 else:
@@ -175,7 +173,6 @@ if "--no_apex" not in sys.argv:
                     "-O3",
                 ],
             },
-            include_dirs=['/opt/metaseq_stack/Thrust/'],
         )
     )
     extension_modules.append(
@@ -187,9 +184,8 @@ if "--no_apex" not in sys.argv:
             ],
             extra_compile_args={
                 "cxx": ["-O3"],
-                "nvcc": ["-O3" ],
+                "nvcc": ["-O3", "-D__HIP_PLATFORM_HCC__"],
             },
-            include_dirs=['/opt/metaseq_stack/Thrust/'],
         )
     )
     #extension_modules.append(
@@ -219,7 +215,6 @@ if "--no_apex" not in sys.argv:
                 "cxx": ["-O3"],
                 "nvcc": ["-O3"],
             },
-            include_dirs=['/opt/metaseq_stack/Thrust/'],
         )
     )
 else:
